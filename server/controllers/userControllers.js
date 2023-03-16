@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const bcript = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel')
 
@@ -16,7 +16,36 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error('Please add all fields!')
   }
 
-  res.json({ message: 'Register User' })
+  // Check if user exits
+  const userExists = await User.findOne({email})
+
+  if(userExists) {
+    res.status(400)
+    throw new Error('User already exists!')
+  }
+
+  // Hash password
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(password, salt)
+
+  // Create the user
+  const user = await User.create({
+    name,
+    email,
+    password: hashedPassword
+  })
+
+  if(user) {
+    res.status(201).json({
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+      token: generateToken(user._id)
+    })
+  } else {
+    res.status(400)
+    throw new Error('Invalid user data')
+  }
 })
 
 // @desc   Authenticate users
@@ -24,16 +53,38 @@ const registerUser = asyncHandler(async (req, res) => {
 // @access is Public
 
 const loginUser = asyncHandler (async (req, res) => {
-  res.json({ message: 'Login User' })
+  const {email, password} = req.body
+
+  // Checks for user email
+  const user = await User.findOne({email})
+
+  if(user && (await bcrypt.compare(password, user.password))) {
+    res.json({
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+      token: generateToken(user._id),
+    })  
+  } else {
+    res.status(400)
+    throw new Error('Invalid credentials!')
+  }
 })
 
 // @desc   Get user data
 // @route GET to /api/users/me
-// @access is Public
+// @access is Private
 
 const getMe = asyncHandler ( async (req, res) => {
   res.json({ message: 'User data' })
 })
+
+// Generate a JSON Web Token
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: '33d',
+  })
+}
 
 module.exports = {
   registerUser,
