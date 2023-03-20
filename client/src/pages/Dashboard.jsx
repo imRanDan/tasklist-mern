@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import GoalForm from '../components/GoalForm'
+import TaskForm from '../components/TaskForm'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -17,10 +17,10 @@ function Dashboard() {
   return (
     <>
       <section className="heading">
-        <h1>Welcome to your goals page, {user && user.name}</h1>
+        <h1>Welcome to your tasklist page, {user && user.name}</h1>
       </section>
 
-      <GoalForm />
+      <TaskForm />
     </>
   )
 }

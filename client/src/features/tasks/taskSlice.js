@@ -1,20 +1,22 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 
 const initialState = {
-  goals: [],
+  tasks: [],
   isError: false,
   isLoading: false,
   isSuccess: false,
   message: ''
 }
 
-export const goalSlice = createSlice({
-  name: 'goal',
+// Creates new task
+
+export const taskSlice = createSlice({
+  name: 'task',
   initialState,
   reducers: {
     reset: (state) => initialState
   }
 })
 
-export const {reset} = goalSlice.actions
-export default goalSlice.reducer
+export const {reset} = taskSlice.actions
+export default taskSlice.reducer
