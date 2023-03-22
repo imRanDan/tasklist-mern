@@ -4,6 +4,7 @@
   "description": "task-list app for educational and portfolio purposes",
   "main": "server.js",
   "scripts": {
+    "start": " ",
     "server": "nodemon server/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
