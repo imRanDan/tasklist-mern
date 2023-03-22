@@ -6,6 +6,7 @@ const {errorHandler} = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
 const port = process.env.PORT || 5003
 
+
 connectDB()
 
 const app = express()
@@ -27,4 +28,14 @@ if(process.env.NODE_ENV === 'production') {
 
 app.use(errorHandler)
 
-app.listen(port, () => console.log(`Server started on port ${port}`))
+// Connect to DB before listening
+connectDB().then(() => {
+    app.listen(port, () => {
+        console.log("listening for requests")
+    })
+})
+
+
+
+// app.listen(port, () => console.log(`Server started on port ${port}`))
+
