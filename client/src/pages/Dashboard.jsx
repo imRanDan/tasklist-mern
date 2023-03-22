@@ -37,7 +37,7 @@ function Dashboard() {
   return (
     <>
       <section className="heading">
-        <h1>Welcome to your tasklist page, {user && user.name}</h1>
+        <h1>Welcome to your tasklist, {user && user.name}!</h1>
       </section>
 
       <TaskForm />

@@ -1,7 +1,10 @@
-import {FaSign, FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
+import {FaSignOutAlt} from 'react-icons/fa'
+import {IoMdLogIn} from 'react-icons/io'
+import {TfiWrite} from 'react-icons/tfi'
 import {Link, useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {logout, reset} from '../features/auth/authSlice'
+import MyTaskListLogo from '../assets/images/mytasklist.png'
 
 function Header() {
   const navigate = useNavigate()
@@ -18,7 +21,7 @@ function Header() {
   return (
     <header className='header'>
       <div className="logo">
-        <Link to='/'>Task List</Link>
+        <Link to='/'><img src={MyTaskListLogo} alt='myTaskList' className="header-logo" /> </Link>
       </div>
       <ul>
         {user ? (
@@ -31,13 +34,13 @@ function Header() {
       <>
         <li> 
         <Link to='/login'>
-          <FaSignInAlt />Login 
+          <IoMdLogIn />Login 
         </Link>
       </li>
 
       <li>
         <Link to='/register'>
-          <FaUser />Sign Up
+          <TfiWrite />Sign up
         </Link>
       </li>
       </>

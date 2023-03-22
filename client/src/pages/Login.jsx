@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {FaSignInAlt} from 'react-icons/fa'
+import {IoMdLogIn} from 'react-icons/io'
 import {useSelector, useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import {toast} from 'react-toastify'
@@ -60,7 +60,7 @@ function Login() {
     <>
       <section>
         <h1>
-          <FaSignInAlt /> Login
+          <IoMdLogIn /> Login
         </h1>
         <p>Please login to your account</p>
       </section>
