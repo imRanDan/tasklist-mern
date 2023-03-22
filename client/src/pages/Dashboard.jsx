@@ -3,7 +3,8 @@ import {useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import TaskForm from '../components/TaskForm'
 import Spinner from '../components/Spinner'
-import { getTasks, reset } from '../features/tasks/taskSlice'
+import { getTasks} from '../features/tasks/taskSlice'
+import { reset } from '../features/auth/authSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
