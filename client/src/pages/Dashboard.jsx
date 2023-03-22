@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import TaskForm from '../components/TaskForm'
+import TaskItem from '../components/TaskItem'
 import Spinner from '../components/Spinner'
 import { getTasks} from '../features/tasks/taskSlice'
 import { reset } from '../features/auth/authSlice'
@@ -40,6 +41,16 @@ function Dashboard() {
       </section>
 
       <TaskForm />
+
+      <section className="content">
+        {tasks.length > 0 ? (
+          <div className="tasks">
+            {tasks.map((task) => (
+              <TaskItem key={task._id} task={task}/>
+            ))}
+          </div>
+        ) : (<h3>No tasks created!</h3>)}
+      </section>
     </>
   )
 }
