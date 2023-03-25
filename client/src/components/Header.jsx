@@ -1,6 +1,7 @@
-import {FaSignOutAlt} from 'react-icons/fa'
+import {FaSignOutAlt, FaTasks} from 'react-icons/fa'
 import {IoMdLogIn} from 'react-icons/io'
 import {TfiWrite} from 'react-icons/tfi'
+import {BsInfoSquare} from 'react-icons/bs'
 import {Link, useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {logout, reset} from '../features/auth/authSlice'
@@ -15,13 +16,15 @@ function Header() {
     dispatch(logout())
     dispatch(reset())
     navigate('/')
+
+    
   }
 
 
   return (
     <header className='header'>
       <div className="logo">
-        <Link to='/'><img src={MyTaskListLogo} alt='myTaskList' className="header-logo" /> </Link>
+        <Link to='/about'><img src={MyTaskListLogo} alt='myTaskList' className="header-logo" /> </Link>
       </div>
       <ul>
         {user ? (
@@ -43,6 +46,16 @@ function Header() {
           <TfiWrite />Sign up
         </Link>
       </li>
+      <li>
+          <Link to="/about">
+            <BsInfoSquare/>About
+          </Link>
+        </li>
+        <li>
+          <Link to ="/">
+          <FaTasks/>Tasks
+          </Link>
+        </li>
       </>
       )}
         
