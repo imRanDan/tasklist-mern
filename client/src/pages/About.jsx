@@ -3,20 +3,28 @@ import React from 'react'
 function About() {
   return (
     <div>
-      <section class="hero">
-      <h1>About myTaskList</h1>
-      <p>myTaskList is a tool designed to help you keep on track on your day-to-days.</p>
-      </section>
-
-      <section class="about">
-      <h2>Why myTaskList?</h2>
-      <p>myTaskList is to be used as a supplement to your other task-management apps. Apps such as Notion, Obsidian, Evernote, and more.</p>
-      </section>
-
-      <section class="functions">
-        <h2>How does it work?</h2>
-        <p>On a day to day basis, you want to keep track of when you set your tasks, and myTaskList timestamps when you set one. It keeps it open as long as it takes and once you are done, you can then close the task.</p>
-      </section>
+      {/* The Hero Section */}
+    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              Why choose myTaskList?
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              myTaskList is for doers. The people who like to get things done.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="/signup"
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Get started
+              </a>
+              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
     </div>
   )
 }
