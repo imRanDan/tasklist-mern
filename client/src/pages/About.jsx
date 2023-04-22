@@ -7,10 +7,10 @@ function About() {
     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Why choose myTaskList?
+            Maximize Your Productivity and Stay Focused
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              myTaskList is for doers. The people who like to get things done.
+              myTaskList is for the doers. The people who get things done.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -25,6 +25,42 @@ function About() {
             </div>
           </div>
         </div>
+
+        {/* Learn More */}
+        <div className="overflow-hidden bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="lg:pr-8 lg:pt-4">
+            <div className="lg:max-w-lg">
+              <p className="text-base font-semibold leading-7 text-indigo-600">Work smarter, not harder</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Time-stamped task creation</h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Breaking down your day-to-day into time-stamped tasks not only help make the day bearable but you become accountable to get time-crucial tasks done ASAP.
+              </p>
+            </div>
+          </div>
+          <div className="lg:pr-8 lg:pt-4">
+            <div className="lg:max-w-lg">
+              <p className="text-base font-semibold leading-7 text-indigo-600">Stress Less</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Task prioritization</h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Create timestamped tasks that will keep track of when you started and once you're finished you can delete them.
+              </p>
+            </div>
+          </div>
+          <div className="lg:pr-8 lg:pt-4">
+            <div className="lg:max-w-lg">
+              <p className="text-base font-semibold leading-7 text-indigo-600">Work smarter, not harder</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Task completion</h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Breaking down your day-to-day into time-stamped tasks not only help make the day bearable but you become accountable to get time-crucial tasks done ASAP.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   )
 }
