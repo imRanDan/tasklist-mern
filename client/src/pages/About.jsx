@@ -50,10 +50,10 @@ function About() {
           </div>
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-indigo-600">Work smarter, not harder</p>
+              <p className="text-base font-semibold leading-7 text-indigo-600">Mission Accomplished</p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Task completion</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Breaking down your day-to-day into time-stamped tasks not only help make the day bearable but you become accountable to get time-crucial tasks done ASAP.
+                Take control of your workload and accomplish more in less time with just a few clicks.
               </p>
             </div>
           </div>

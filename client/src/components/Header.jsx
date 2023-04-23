@@ -59,11 +59,6 @@ function Header() {
             <BsInfoSquare/>About
           </Link>
         </li>
-        <li>
-          <Link to ="/">
-          <FaTasks/>Tasks
-          </Link>
-        </li>
       </>
       )}
         
