@@ -16,3 +16,7 @@ I did not have time to make a homepage/landing page but if I were to come back t
 ## Lessons Learned:
 
 I learned a lot about on how to connect the front-end and back-end to get a true fullstack app to function. I learned alot about how to encrypt user data so that they don't have to worry about their info getting exposed. Playing around with Redux DevTools and React components was also great hands-on experience of breaking and fixing things.
+
+
+##setup for cloned repo's
+s
